@@ -1,4 +1,4 @@
-# Pratica_BD
+# Pratica_Banco_Dados
 Códigos, links e práticas utilizadas na disciplina de Prática com Banco de Dados
 
 ---
