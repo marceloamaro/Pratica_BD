@@ -1,7 +1,7 @@
+"""
 # criação do banco de dados
 import sqlite3  # informa o banco dedados a ser utilizado através do import
 conexao = sqlite3.connect("agenda.db")  # Criação do banco de dados
-"""
 # Criação do cursor (Objetos utilizados para enviar comados e receber resultados do banco de dados)
 cursor = conexao.cursor()
 
