@@ -1,3 +1,4 @@
+"""
 # Inserindo vários dados através do Executemany
 import sqlite3
 
@@ -20,3 +21,4 @@ cursor.executemany(
 conexao.commit()
 cursor.close()
 conexao.close()
+"""

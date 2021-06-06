@@ -1,3 +1,4 @@
+"""
 # consulta de registro individual
 import sqlite3
 conexao = sqlite3.connect("agenda.db")
@@ -13,3 +14,4 @@ resultado = cursor.fetchone()
 print(f"Nome: {resultado[0]}\nTelefone: {resultado[1]}")
 cursor.close()
 conexao.close()
+"""

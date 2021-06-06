@@ -1,3 +1,4 @@
+"""
 ### Práticas 
 
 * Prática01 - Criar um banco de dados com caracteristicas equivalentes
@@ -7,3 +8,4 @@
 * Prática03 - Fazer uma consulta utilizando fetchone
 
 * Prática04 - Fazer uma consulta utilizando fetchall
+"""
