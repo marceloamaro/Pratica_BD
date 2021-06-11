@@ -1,4 +1,4 @@
-"""# Consulta de vários registros ao mesmo tempo
+# Consulta de vários registros ao mesmo tempo
 import sqlite3
 conexao = sqlite3.connect("agenda.db")
 cursor = conexao.cursor()
@@ -16,4 +16,3 @@ for registro in resultado:
 
 cursor.close()
 conexao.close()
-"""
