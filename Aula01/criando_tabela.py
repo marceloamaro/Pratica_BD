@@ -1,4 +1,4 @@
-"""
+
 # criação do banco de dados
 import sqlite3  # informa o banco dedados a ser utilizado através do import
 conexao = sqlite3.connect("agenda.db")  # Criação do banco de dados
@@ -25,4 +25,3 @@ insert into agenda(nome, telefone) values(?, ?)
 conexao.commit()  # Operação necessaŕia para modificar o Banco de Dados
 cursor.close()   # Fechando o cursor
 conexao.close()  # Fechando a conexão
-"""
