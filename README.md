@@ -1,5 +1,7 @@
 # Pratica_Banco_Dados
 Códigos, links e práticas utilizadas na disciplina de Prática com Banco de Dados
+![image](https://user-images.githubusercontent.com/60752818/121784604-33824480-cb8b-11eb-96f5-ee0ab9483f6a.png)
+
 
 ---
 * [Aula 01](https://github.com/marceloamaro/Pratica_BD/tree/main/Aula01)
