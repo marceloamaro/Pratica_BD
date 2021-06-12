@@ -10,15 +10,7 @@ dados = [
 
 with sqlite3.connect("agenda2.db") as conexao:
     with closing(conexao.cursor()) as cursor:
-       #cursor.execute(
-            # """
-            # create table agenda2
-            # (
-             #    nome text,
-             #    telefone text
-             #)
-            # """
-        # )
+      
          cursor.executemany(
              """
              insert into agenda2(nome, telefone) values(?,?)
