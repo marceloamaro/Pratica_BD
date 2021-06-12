@@ -1,8 +1,6 @@
 import sqlite3
 from contextlib import closing
 
-
-
 with sqlite3.connect("agenda2.db") as conexao:
     with closing(conexao.cursor()) as cursor:
         

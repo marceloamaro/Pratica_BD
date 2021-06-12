@@ -17,12 +17,7 @@ with sqlite3.connect('Brasil.db') as conexao:
     conexao.row_factory = sqlite3.Row
 
     with closing(conexao.cursor()) as cursor:
-          cursor.execute("""create table estados
-                              (
-                                  id integer primary key autoincrement,
-                                  nome text,
-                                  populacao integer
-                              )""")
-    
+        
+        cursor.executemany("insert into estados(nome, populacao) values(?, ?) ", dados)
 
-     
+conexao.commit()
