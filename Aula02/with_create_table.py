@@ -24,3 +24,4 @@ with sqlite3.connect("agenda2.db") as conexao:
              insert into agenda2(nome, telefone) values(?,?)
              """,(dados)
          )
+conexao.commit()
