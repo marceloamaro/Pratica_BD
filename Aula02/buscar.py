@@ -10,7 +10,7 @@ dados = [
 
 with sqlite3.connect("agenda2.db") as conexao:
     with closing(conexao.cursor()) as cursor:
-cursor.execute("select * from agenda2 where nome = 'Abacate' ")
+        cursor.execute("select * from agenda2 where nome = 'Jonas' ")
         while True:
             resultado = cursor.fetchone()
             if resultado is None:
