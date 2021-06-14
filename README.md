@@ -10,4 +10,4 @@ Códigos, links e práticas utilizadas na disciplina de Prática com Banco de Da
 * [Resposta da Praticas Aula 01](https://github.com/marceloamaro/Pratica_BD/tree/main/Aula01/pratica_aula01)
 * [Aula 02](https://github.com/marceloamaro/Pratica_BD/tree/main/Aula02)
 * [Praticas Aula 02](https://github.com/marceloamaro/Pratica_BD/blob/main/Aula02/pratica02.md)
-* [Resposta da Praticas Aula 02]()
+* [Resposta da Praticas Aula 02](https://github.com/marceloamaro/Pratica_BD/tree/main/Aula02/Praticas%20Aula%2002)
