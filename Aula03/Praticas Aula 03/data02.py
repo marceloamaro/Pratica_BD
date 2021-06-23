@@ -14,6 +14,11 @@ select * from linguagens
 order by ano asc
 limit 1;
 """ 
+BUSCA_LINGUAGEM_MAIS_RECENTE = """
+select * from linguagens
+order by ano desc
+limit 1;
+"""
 
 def connect():
     return sqlite3.connect("linguagens.db")
@@ -38,3 +43,7 @@ def busca_nome(conexao, nome):
 def busca_antiga(conexao):
     with conexao:
         return conexao.execute(BUSCA_LINGUAGEM_MAIS_ANTIGA).fetchone() 
+
+def busca_recente(conexao):
+    with conexao:
+        return conexao.execute(BUSCA_LINGUAGEM_MAIS_RECENTE).fetchone()
