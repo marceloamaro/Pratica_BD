@@ -11,7 +11,7 @@ class Janela(QMainWindow):
 
         self.topo = 100
         self.esquerda = 100
-        self.largura = 800
+        self.largura = 900
         self.altura = 800
         self.titulo = "Primeira Janela"
       
@@ -48,8 +48,8 @@ class Janela(QMainWindow):
 
     
         self.logo = QLabel(self)
-        self.logo.move(450, 200)
-        self.logo.resize(400, 500)
+        self.logo.move(500, 200)
+        self.logo.resize(500, 600)
         self.CarregarJanela()
 
     def  CarregarJanela(self):
@@ -66,7 +66,7 @@ class Janela(QMainWindow):
 
     
     def bota02_click(self):
-        self.label_1.setStyleSheet("QLabel {color:pink; font-size:25px}")
+        self.label_1.setStyleSheet("QLabel {color:blue; font-size:25px}")
 
         self.label_1.setText("Java")
         self.logo.setPixmap(QtGui.QPixmap('java.png')) 
@@ -75,7 +75,7 @@ class Janela(QMainWindow):
         self.label_1.setStyleSheet("QLabel {color:blue; font-size:25px}")
 
         self.label_1.setText("C")
-        self.logo.setPixmap(QtGui.QPixmap('c.png')) 
+        self.logo.setPixmap(QtGui.QPixmap('cc.png')) 
 
 
 
