@@ -11,8 +11,8 @@ class Janela(QMainWindow):
 
         self.topo = 100
         self.esquerda = 100
-        self.largura = 900
-        self.altura = 800
+        self.largura = 800
+        self.altura = 700
         self.titulo = "Primeira Janela"
       
     
