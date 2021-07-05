@@ -1,13 +1,26 @@
 from PyQt5 import  uic,QtWidgets
 import sqlite3
 
+def chama_segunda():
+    primeira.label_4.setText("")
+    nome_usuario = primeira.lineEdit.text()
+    senha = primeira.lineEdit_2.text()
+    if nome_usuario == "marcelo123" and senha == "123456" :
+        primeira.close()
+        segunda.show()
+    else :
+        primeira.label_4.setText("Dados de login incorretos!")
+    
 
+def logout():
+    segunda.close()
+    primeira.show()
 
 def funcao_principal():
-    codigo = peixaria.lineEdit.text()
-    descricao = peixaria.lineEdit_2.text()
-    preco = peixaria.lineEdit_3.text()
-    categoria = peixaria.lineEdit_4.text()
+    codigo = segunda.lineEdit.text()
+    descricao = segunda.lineEdit_2.text()
+    preco = segunda.lineEdit_3.text()
+    categoria = segunda.lineEdit_4.text()
     
 
     print("Código:",codigo)
@@ -24,9 +37,14 @@ def funcao_principal():
     banco.close()
 
     
-app=QtWidgets.QApplication([])
-peixaria=uic.loadUi("peixaria.ui")
-peixaria.pushButton.clicked.connect(funcao_principal)
 
-peixaria.show()
+app=QtWidgets.QApplication([])
+primeira=uic.loadUi("primeira.ui")
+segunda = uic.loadUi("segunda.ui")
+primeira.pushButton.clicked.connect(chama_segunda)
+segunda.pushButton.clicked.connect(logout)
+primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password) 
+
+
+primeira.show()
 app.exec()
