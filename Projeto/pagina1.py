@@ -1,31 +1,29 @@
 from PyQt5 import  uic,QtWidgets
 import sqlite3
-import bd
+
 
 
 def funcao_principal():
     codigo = peixaria.lineEdit.text()
     descricao = peixaria.lineEdit_2.text()
     preco = peixaria.lineEdit_3.text()
+    categoria = peixaria.lineEdit_4.text()
     
-    if peixaria.radioButton_3.isChecked() :
-        print("Categoria Peixe_fresco selecionada")
-    elif peixaria.radioButton.isChecked() :
-        print("Categoria Peixe_congelado selecionada")
-    else :
-        print("Categoria Peixe_salgado selecionada")
-
 
     print("Código:",codigo)
     print("Descricao:",descricao)
     print("Preco",preco)
+    print("Categoria selecionada",categoria)
     
+    banco = sqlite3.connect('estoque.db') 
+    cursor = banco.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS produtos (codigo integer, descricao text, preco text, categoria text)")
+    cursor.execute("INSERT INTO produtos VALUES ('"+codigo+"','"+descricao+"','"+preco+"','"+categoria+"')")
 
+    banco.commit() 
+    banco.close()
 
     
-    
-    
-
 app=QtWidgets.QApplication([])
 peixaria=uic.loadUi("peixaria.ui")
 peixaria.pushButton.clicked.connect(funcao_principal)
