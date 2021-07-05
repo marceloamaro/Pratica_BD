@@ -1,9 +1,12 @@
 from PyQt5 import  uic,QtWidgets
+import sqlite3
+import bd
+
 
 def funcao_principal():
-    linha1 = peixaria.lineEdit.text()
-    linha2 = peixaria.lineEdit_2.text()
-    linha3 = peixaria.lineEdit_3.text()
+    codigo = peixaria.lineEdit.text()
+    descricao = peixaria.lineEdit_2.text()
+    preco = peixaria.lineEdit_3.text()
     
     if peixaria.radioButton_3.isChecked() :
         print("Categoria Peixe_fresco selecionada")
@@ -12,9 +15,15 @@ def funcao_principal():
     else :
         print("Categoria Peixe_salgado selecionada")
 
-    print("Código:",linha1)
-    print("Descricao:",linha2)
-    print("Preco",linha3)
+
+    print("Código:",codigo)
+    print("Descricao:",descricao)
+    print("Preco",preco)
+    
+
+
+    
+    
     
 
 app=QtWidgets.QApplication([])
