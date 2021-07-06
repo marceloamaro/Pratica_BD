@@ -184,7 +184,7 @@ border-radius: 15px;
 border-color: black;</string>
     </property>
     <property name="text">
-     <string>Exlcuir cadrastro</string>
+     <string>Exlcuir Produto</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">

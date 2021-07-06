@@ -21,10 +21,6 @@ def chama_segunda():
         primeira.label_4.setText("Dados de login incorretos!")
     
 
-def logout():
-    segunda.close()
-    primeira.show()
-
 def volta_terceira():
     segunda.show()
     terceira.close()
@@ -32,6 +28,8 @@ def volta_terceira():
 def volta_quarta():
     segunda.show()
     quarta.close()
+    terceira.close()
+    primeira.close()
 def abre_tela_terceira():
     segunda.close()
     terceira.show()
@@ -80,13 +78,12 @@ segunda = uic.loadUi("segunda.ui")
 terceira = uic.loadUi("terceira.ui")
 quarta = uic.loadUi("quarta.ui")
 primeira.pushButton.clicked.connect(chama_segunda)
-segunda.pushButton.clicked.connect(logout)
 primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
 segunda.pushButton_3.clicked.connect(abre_tela_terceira)
 terceira.pushButton.clicked.connect(chama_terceira)  
 segunda.pushButton_5.clicked.connect(sair)
 quarta.pushButton_5.clicked.connect(sair)
-quarta.pushButton_5.clicked.connect(volta_quarta)
+quarta.pushButton_6.clicked.connect(volta_quarta)
 segunda.pushButton.clicked.connect(abre_tela_quarta)
 terceira.pushButton.clicked.connect(chama_terceira)
 terceira.pushButton_2.clicked.connect(volta_terceira)
