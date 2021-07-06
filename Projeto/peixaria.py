@@ -16,11 +16,16 @@ def logout():
     segunda.close()
     primeira.show()
 
-def funcao_principal():
-    codigo = segunda.lineEdit.text()
-    descricao = segunda.lineEdit_2.text()
-    preco = segunda.lineEdit_3.text()
-    categoria = segunda.lineEdit_4.text()
+def abre_tela_terceira():
+    segunda.close()
+    terceira.show()
+       
+
+def chama_terceira():
+    codigo = terceira.lineEdit.text()
+    descricao = terceira.lineEdit_2.text()
+    preco = terceira.lineEdit_3.text()
+    categoria = terceira.lineEdit_4.text()
     
 
     print("Código:",codigo)
@@ -41,9 +46,12 @@ def funcao_principal():
 app=QtWidgets.QApplication([])
 primeira=uic.loadUi("primeira.ui")
 segunda = uic.loadUi("segunda.ui")
+terceira = uic.loadUi("terceira.ui")
 primeira.pushButton.clicked.connect(chama_segunda)
 segunda.pushButton.clicked.connect(logout)
-primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password) 
+primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
+segunda.pushButton_3.clicked.connect(abre_tela_terceira)
+terceira.pushButton.clicked.connect(chama_terceira)  
 
 
 primeira.show()
