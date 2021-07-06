@@ -1,5 +1,14 @@
+from sqlite3.dbapi2 import Cursor
 from PyQt5 import  uic,QtWidgets
 import sqlite3
+
+
+def sair():
+    primeira.close()
+    segunda.close()
+    terceira.close()
+    quarta.close()
+    
 
 def chama_segunda():
     primeira.label_4.setText("")
@@ -16,9 +25,20 @@ def logout():
     segunda.close()
     primeira.show()
 
+def volta_terceira():
+    segunda.show()
+    terceira.close()
+
+def volta_quarta():
+    segunda.show()
+    quarta.close()
 def abre_tela_terceira():
     segunda.close()
     terceira.show()
+
+def abre_tela_quarta():
+    segunda.close()
+    quarta.show()    
        
 
 def chama_terceira():
@@ -41,17 +61,36 @@ def chama_terceira():
     banco.commit() 
     banco.close()
 
+def chama_quarta():
+    banco = sqlite3.connect('estoque.db') 
+    cursor = banco.cursor()
+    cursor.execute ("select * from produtos")
+
+    resultado = cursor.fetchone()
+
+    quarta.label_4.setText("codigo: {resultado[0]}\ndescricao: {resultado[1]}")
+    
+    banco.close()
+
     
 
 app=QtWidgets.QApplication([])
 primeira=uic.loadUi("primeira.ui")
 segunda = uic.loadUi("segunda.ui")
 terceira = uic.loadUi("terceira.ui")
+quarta = uic.loadUi("quarta.ui")
 primeira.pushButton.clicked.connect(chama_segunda)
 segunda.pushButton.clicked.connect(logout)
 primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
 segunda.pushButton_3.clicked.connect(abre_tela_terceira)
 terceira.pushButton.clicked.connect(chama_terceira)  
+segunda.pushButton_5.clicked.connect(sair)
+quarta.pushButton_5.clicked.connect(sair)
+quarta.pushButton_5.clicked.connect(volta_quarta)
+segunda.pushButton.clicked.connect(abre_tela_quarta)
+terceira.pushButton.clicked.connect(chama_terceira)
+terceira.pushButton_2.clicked.connect(volta_terceira)
+
 
 
 primeira.show()

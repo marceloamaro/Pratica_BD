@@ -17,39 +17,11 @@
    <string notr="true">background-color: rgb(75, 255, 165);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>200</y>
-      <width>171</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(55, 102, 255);
-color: rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 15px;
-border-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Consulta Completa</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>120</y>
+      <y>50</y>
       <width>31</width>
       <height>61</height>
      </rect>
@@ -64,10 +36,10 @@ border-color: black;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>490</y>
-      <width>241</width>
-      <height>31</height>
+      <x>10</x>
+      <y>110</y>
+      <width>431</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="font">
@@ -82,39 +54,11 @@ border-color: black;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>270</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(55, 102, 255);
-color: rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 15px;
-border-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Cadastrar</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>20</y>
+      <x>110</x>
+      <y>0</y>
       <width>201</width>
       <height>31</height>
      </rect>
@@ -131,67 +75,11 @@ border-color: black;</string>
      <string>Peixaria Avenida</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>200</y>
-      <width>171</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(55, 102, 255);
-color: rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 15px;
-border-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Consulta Descrição</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>270</y>
-      <width>151</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(55, 102, 255);
-color: rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 15px;
-border-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Exlcuir cadrastro</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>350</y>
+      <x>320</x>
+      <y>450</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -215,14 +103,55 @@ border-color: black;</string>
      <string>Sair</string>
     </property>
    </widget>
-   <zorder>label_2</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>label_4</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>label_5</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_5</zorder>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>450</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(55, 102, 255);
+color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 15px;
+border-color: black;</string>
+    </property>
+    <property name="text">
+     <string>Volta</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>30</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 85, 255);</string>
+    </property>
+    <property name="text">
+     <string>Consulta Completa</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
