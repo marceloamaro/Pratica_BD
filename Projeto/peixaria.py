@@ -85,7 +85,6 @@ segunda.pushButton_5.clicked.connect(sair)
 quarta.pushButton_5.clicked.connect(sair)
 quarta.pushButton_6.clicked.connect(volta_quarta)
 segunda.pushButton.clicked.connect(abre_tela_quarta)
-terceira.pushButton.clicked.connect(chama_terceira)
 terceira.pushButton_2.clicked.connect(volta_terceira)
 
 
