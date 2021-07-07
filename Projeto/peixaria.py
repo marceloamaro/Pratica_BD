@@ -72,7 +72,7 @@ def apagar():
     resultado = cursor.fetchone()
     cursor.execute("delete from produtos where descricao = ?", (busca2,))
     print("Registros Deletados: ")
-
+    
     banco.commit()
     banco.close()
 
@@ -137,7 +137,6 @@ segunda.pushButton_4.clicked.connect(abre_tela_sexta)
 quinta.pushButton_7.clicked.connect(busca_simples)
 sexta.pushButton_8.clicked.connect(apagar)
 quarta.pushButton_7.clicked.connect(busca_completa)
-
 
 
 primeira.show()
