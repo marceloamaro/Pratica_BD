@@ -20,8 +20,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>200</y>
+      <x>10</x>
+      <y>280</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -48,8 +48,8 @@ border-color: black;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>120</y>
+      <x>210</x>
+      <y>310</y>
       <width>31</width>
       <height>61</height>
      </rect>
@@ -85,8 +85,8 @@ border-color: black;</string>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>270</y>
+      <x>60</x>
+      <y>350</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -114,9 +114,9 @@ border-color: black;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>20</y>
-      <width>201</width>
-      <height>31</height>
+      <y>50</y>
+      <width>431</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="font">
@@ -128,14 +128,17 @@ border-color: black;</string>
      <string notr="true">color: rgb(0, 85, 255);</string>
     </property>
     <property name="text">
-     <string>Peixaria Avenida</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>image.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>200</y>
+      <x>260</x>
+      <y>280</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -162,8 +165,8 @@ border-color: black;</string>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>270</y>
+      <x>260</x>
+      <y>350</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -191,7 +194,7 @@ border-color: black;</string>
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>350</y>
+      <y>420</y>
       <width>121</width>
       <height>51</height>
      </rect>
