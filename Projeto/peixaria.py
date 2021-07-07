@@ -2,7 +2,6 @@ from sqlite3.dbapi2 import Cursor
 from PyQt5 import  uic,QtWidgets
 import sqlite3
 
-
 def sair():
     primeira.close()
     segunda.close()
@@ -11,7 +10,6 @@ def sair():
     quinta.close()
     sexta.close()
     
-
 def chama_segunda():
     primeira.label_4.setText("")
     nome_usuario = primeira.lineEdit.text()
@@ -22,9 +20,6 @@ def chama_segunda():
     else :
         primeira.label_4.setText("Dados de login incorretos!")
     
-
-
-
 def volta_tela():
     segunda.show()
     quarta.close()
@@ -87,8 +82,8 @@ def PRINT():
 def chama_quarta():
     
     quarta.label_4.setText(PRINT)
-    
-    
+      
+
 
 app=QtWidgets.QApplication([])
 primeira=uic.loadUi("primeira.ui")
