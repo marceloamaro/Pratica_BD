@@ -21,8 +21,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>420</y>
+      <x>50</x>
+      <y>460</y>
       <width>111</width>
       <height>51</height>
      </rect>
@@ -34,17 +34,21 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(55, 102, 255);
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 15px;
+border-color: black;</string>
     </property>
     <property name="text">
-     <string>Enviar</string>
+     <string>Cadrasta</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>80</y>
+      <x>90</x>
+      <y>100</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -61,8 +65,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>130</y>
+      <x>80</x>
+      <y>160</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -79,9 +83,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>180</y>
-      <width>71</width>
+      <x>80</x>
+      <y>240</y>
+      <width>81</width>
       <height>20</height>
      </rect>
     </property>
@@ -91,14 +95,14 @@ color: rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="text">
-     <string>Preço</string>
+     <string>Preço R$</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>79</y>
+      <x>30</x>
+      <y>130</y>
       <width>201</width>
       <height>31</height>
      </rect>
@@ -115,8 +119,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>130</y>
+      <x>30</x>
+      <y>200</y>
       <width>201</width>
       <height>31</height>
      </rect>
@@ -133,8 +137,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>180</y>
+      <x>30</x>
+      <y>270</y>
       <width>201</width>
       <height>31</height>
      </rect>
@@ -148,73 +152,13 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>290</y>
-      <width>161</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Peixe_congelado</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>320</y>
-      <width>151</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Peixe_salgado</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_3">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>260</y>
-      <width>121</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Peixe_fresco</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>0</y>
-      <width>271</width>
-      <height>31</height>
+      <x>260</x>
+      <y>140</y>
+      <width>301</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="font">
@@ -226,14 +170,17 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(0, 85, 255);</string>
     </property>
     <property name="text">
-     <string>Peixaria Avenida</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>image.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>250</y>
+      <x>80</x>
+      <y>310</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -247,6 +194,83 @@ color: rgb(255, 255, 255);</string>
      <string>Categoria:</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>350</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>20</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 85, 255);</string>
+    </property>
+    <property name="text">
+     <string>Cadrasto de Produtos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>460</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(55, 102, 255);
+color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 15px;
+border-color: black;</string>
+    </property>
+    <property name="text">
+     <string>Volta</string>
+    </property>
+   </widget>
+   <zorder>label_4</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>lineEdit_3</zorder>
+   <zorder>label_5</zorder>
+   <zorder>lineEdit_4</zorder>
+   <zorder>label_6</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
