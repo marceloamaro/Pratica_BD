@@ -58,30 +58,57 @@ def chama_terceira():
     
     banco = sqlite3.connect('estoque.db') 
     cursor = banco.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS produtos (codigo integer, descricao text, preco text, categoria text)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS produtos (codigo integer primary key, descricao text, preco text, categoria text)")
     cursor.execute("INSERT INTO produtos VALUES ('"+codigo+"','"+descricao+"','"+preco+"','"+categoria+"')")
 
     banco.commit() 
     banco.close()
 
-def PRINT():
+def apagar():
+    busca2 = quinta.lineEdit_2.text()
     banco = sqlite3.connect('estoque.db') 
     cursor = banco.cursor()
-    cursor.execute ("select * from produtos")
+    
+    resultado = cursor.fetchone()
+    cursor.execute("delete from produtos where descricao = ?", (busca2,))
+    print("Registros Deletados: ")
 
-    resultado = cursor.fetchall()
-
-    for resultado in cursor:
-        print("codigo: ", resultado[0])
-        print("descricao: ", resultado[1])
-        print("preco: ", resultado[2])
-        print("categoria: ", resultado[3])
-        print("\n")
+    banco.commit()
     banco.close()
+
+
+def busca_simples():
+    busca1 = quinta.lineEdit_2.text()
+    banco = sqlite3.connect('estoque.db') 
+    cursor = banco.cursor()
+    cursor.execute("select * from produtos where descricao = ?", (busca1,))
+    while True:
+        resultado = cursor.fetchone()
+        if resultado is None:
+            break
+        print(f"Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}")
+    banco.close()
+
+def busca_completa():
+    banco = sqlite3.connect('estoque.db') 
+    cursor = banco.cursor()
+    cursor.execute("select *from produtos")
+    
+    resultados = cursor.fetchall()
+    print("Total de arquivos:  ", len(resultados))
+    for row in resultados:
+            print("Codigo: ", row[0])
+            print("Descrição: ", row[1])
+            print("Preço: ", row[2])
+            print("Catergoria: ", row[3])
+            print("\n")
+
+    banco.close()    
+
 
 def chama_quarta():
     
-    quarta.label_4.setText(PRINT)
+    segunda.label.setText()
       
 
 
@@ -101,13 +128,16 @@ quarta.pushButton_5.clicked.connect(sair)
 quarta.pushButton_6.clicked.connect(volta_tela)
 segunda.pushButton.clicked.connect(abre_tela_quarta)
 terceira.pushButton_2.clicked.connect(volta_tela)
-terceira.pushButton.clicked.connect(PRINT)
 quinta.pushButton_5.clicked.connect(sair)
 quinta.pushButton_6.clicked.connect(volta_tela)
 segunda.pushButton_2.clicked.connect(abre_tela_quinta)
 sexta.pushButton_5.clicked.connect(sair)
 sexta.pushButton_6.clicked.connect(volta_tela)
 segunda.pushButton_4.clicked.connect(abre_tela_sexta)
+quinta.pushButton_7.clicked.connect(busca_simples)
+sexta.pushButton_8.clicked.connect(apagar)
+quarta.pushButton_7.clicked.connect(busca_completa)
+
 
 
 primeira.show()
