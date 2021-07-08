@@ -1,6 +1,9 @@
 from sqlite3.dbapi2 import Cursor
 from PyQt5 import  uic,QtWidgets
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
+from PyQt5.QtCore import Qt
 import sqlite3
+
 
 def sair():
     primeira.close()
@@ -131,9 +134,10 @@ def chama_quinta():
         resultado = cursor.fetchone()
         if resultado is None:
             break
-        """ print(f"Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}") """
+        variavel = print(f"Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}")
+        
     
-    quinta.label_4.setText("Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}")   
+    quinta.label_4.setText(variavel) 
       
     banco.close()
 
