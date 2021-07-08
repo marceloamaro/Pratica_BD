@@ -248,7 +248,7 @@ border-color: black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(55, 102, 255);
+     <string notr="true">background-color: rgb(555, 102, 255);
 color: rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
