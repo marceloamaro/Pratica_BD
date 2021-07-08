@@ -62,6 +62,10 @@ def chama_terceira():
     cursor.execute("INSERT INTO produtos VALUES ('"+codigo+"','"+descricao+"','"+preco+"','"+categoria+"')")
 
     banco.commit() 
+    terceira.lineEdit.setText("")
+    terceira.lineEdit_2.setText("")
+    terceira.lineEdit_3.setText("")
+    terceira.lineEdit_4.setText("")
     banco.close()
 
 def apagar():
@@ -74,6 +78,7 @@ def apagar():
     print("Registros Deletados: ")
     
     banco.commit()
+    quinta.lineEdit_2.setText("")
     banco.close()
 
 
@@ -87,6 +92,8 @@ def busca_simples():
         if resultado is None:
             break
         print(f"Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}")
+    
+    quinta.lineEdit_2.setText("")
     banco.close()
 
 def busca_completa():
@@ -107,10 +114,28 @@ def busca_completa():
 
 
 def chama_quarta():
+    banco = sqlite3.connect('estoque.db') 
+    cursor = banco.cursor()
+    cursor.execute("select *from produtos")
     
-    segunda.label.setText()
-      
+    resultados = cursor.fetchall()
+    quarta.label_4.setText(str(print(busca_completa)))
+    banco.close()
 
+def chama_quinta():
+    busca1 = quinta.lineEdit_2.text()
+    banco = sqlite3.connect('estoque.db') 
+    cursor = banco.cursor()
+    cursor.execute("select * from produtos where descricao = ?", (busca1,))
+    while True:
+        resultado = cursor.fetchone()
+        if resultado is None:
+            break
+        """ print(f"Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}") """
+    
+    quinta.label_4.setText("Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}")   
+      
+    banco.close()
 
 app=QtWidgets.QApplication([])
 primeira=uic.loadUi("primeira.ui")
@@ -137,6 +162,8 @@ segunda.pushButton_4.clicked.connect(abre_tela_sexta)
 quinta.pushButton_7.clicked.connect(busca_simples)
 sexta.pushButton_8.clicked.connect(apagar)
 quarta.pushButton_7.clicked.connect(busca_completa)
+quarta.pushButton_7.clicked.connect(chama_quarta)
+quinta.pushButton_7.clicked.connect(chama_quinta)
 
 
 primeira.show()
