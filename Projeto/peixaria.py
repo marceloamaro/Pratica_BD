@@ -116,30 +116,6 @@ def busca_completa():
     banco.close()    
 
 
-def chama_quarta():
-    banco = sqlite3.connect('estoque.db') 
-    cursor = banco.cursor()
-    cursor.execute("select *from produtos")
-    
-    resultados = cursor.fetchall()
-    quarta.label_4.setText(str(print(busca_completa)))
-    banco.close()
-
-def chama_quinta():
-    busca1 = quinta.lineEdit_2.text()
-    banco = sqlite3.connect('estoque.db') 
-    cursor = banco.cursor()
-    cursor.execute("select * from produtos where descricao = ?", (busca1,))
-    while True:
-        resultado = cursor.fetchone()
-        if resultado is None:
-            break
-        variavel = print(f"Codigo: {resultado[0]}\ndescriçao: {resultado[1],}\npreço: {resultado[2]}\ncategoria: {resultado[3]}")
-        
-    
-    quinta.label_4.setText(variavel) 
-      
-    banco.close()
 
 app=QtWidgets.QApplication([])
 primeira=uic.loadUi("primeira.ui")
@@ -148,6 +124,8 @@ terceira = uic.loadUi("terceira.ui")
 quarta = uic.loadUi("quarta.ui")
 quinta = uic.loadUi("quinta.ui")
 sexta = uic.loadUi("sexta.ui")
+sete = uic.loadUi("sete_quarta.ui")
+oito = uic.loadUi("oito_quinta.ui")
 primeira.pushButton.clicked.connect(chama_segunda)
 primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
 segunda.pushButton_3.clicked.connect(abre_tela_terceira)
@@ -166,8 +144,7 @@ segunda.pushButton_4.clicked.connect(abre_tela_sexta)
 quinta.pushButton_7.clicked.connect(busca_simples)
 sexta.pushButton_8.clicked.connect(apagar)
 quarta.pushButton_7.clicked.connect(busca_completa)
-quarta.pushButton_7.clicked.connect(chama_quarta)
-quinta.pushButton_7.clicked.connect(chama_quinta)
+
 
 
 primeira.show()
