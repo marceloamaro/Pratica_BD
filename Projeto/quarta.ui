@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>400</y>
+      <y>350</y>
       <width>31</width>
       <height>61</height>
      </rect>
@@ -33,38 +33,10 @@
      <pixmap>usuario.png</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>410</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 102, 255);
-color: rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 15px;
-border-color: black;</string>
-    </property>
-    <property name="text">
-     <string>Sair</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>140</x>
       <y>410</y>
       <width>121</width>
       <height>51</height>
@@ -113,8 +85,8 @@ border-color: black;</string>
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>40</y>
+      <x>130</x>
+      <y>60</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -138,27 +110,6 @@ border-color: black;</string>
      <string>Carregar</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>470</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 85, 255);</string>
-    </property>
-    <property name="text">
-     <string>Copyright©2021, Marcelo Amaro de Assis</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
@@ -177,11 +128,9 @@ border-color: black;</string>
    </widget>
    <zorder>label_4</zorder>
    <zorder>label_2</zorder>
-   <zorder>pushButton_5</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>label_6</zorder>
    <zorder>pushButton_7</zorder>
-   <zorder>label_8</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
