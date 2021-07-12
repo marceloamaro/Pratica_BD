@@ -4,7 +4,48 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import Qt
 import sqlite3
 from reportlab.pdfgen import canvas
+
+numero_id = 0
+
+
+def editar_dados():
+    global numero_id
+    banco = sqlite3.connect('estoque.db') 
+    linha = sete.tableWidget.currentRow()
     
+    cursor = banco.cursor()
+    cursor.execute("SELECT codigo FROM produtos")
+    dados_lidos = cursor.fetchall()
+    valor_id = dados_lidos[linha][0]
+    cursor.execute("SELECT * FROM produtos WHERE codigo="+ str(valor_id))
+    produto = cursor.fetchall()
+    tela_editar.show()
+
+    
+    tela_editar.lineEdit_2.setText(str(produto[0][0]))
+    tela_editar.lineEdit_3.setText(str(produto[0][1]))
+    tela_editar.lineEdit_4.setText(str(produto[0][2]))
+    tela_editar.lineEdit_5.setText(str(produto[0][3]))
+    numero_id = valor_id
+
+    banco.close()
+def salvar_valor_editado():
+    global numero_id
+    banco = sqlite3.connect('estoque.db') 
+    # ler dados do lineEdit
+    codigo = tela_editar.lineEdit_2.text()
+    descricao = tela_editar.lineEdit_3.text()
+    preco = tela_editar.lineEdit_4.text()
+    categoria = tela_editar.lineEdit_5.text()
+    # atualizar os dados no banco
+    cursor = banco.cursor()
+    cursor.execute("UPDATE produtos SET descricao = '{}', preco = '{}', categoria ='{}' WHERE codigo = {}".format(descricao,preco,categoria,codigo))
+    banco.commit()
+    #atualizar as janelas
+    tela_editar.close()
+    sete.close()
+    busca_completa()
+
 def chama_segunda():
     primeira.label_4.setText("")
     nome_usuario = primeira.lineEdit.text()
@@ -161,6 +202,7 @@ terceira = uic.loadUi("terceira.ui")
 quarta = uic.loadUi("quarta.ui")
 sete = uic.loadUi("sete_quarta.ui")
 tela_cadastro = uic.loadUi("tela_cadastro.ui")
+tela_editar=uic.loadUi("menu_editar.ui")
 primeira.pushButton.clicked.connect(chama_segunda)
 primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
 segunda.pushButton_3.clicked.connect(abre_tela_terceira)
@@ -175,6 +217,8 @@ sete.pushButton_6.clicked.connect(volta_tela)
 tela_cadastro.pushButton_2.clicked.connect(volta_tela)
 sete.pushButton_4.clicked.connect(apagar)
 sete.pushButton.clicked.connect(gerar_pdf)
+sete.pushButton_3.clicked.connect(editar_dados)
+tela_editar.pushButton.clicked.connect(salvar_valor_editado)
 
 
 
