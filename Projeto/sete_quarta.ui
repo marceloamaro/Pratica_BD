@@ -20,7 +20,7 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>410</y>
       <width>121</width>
       <height>51</height>
@@ -69,9 +69,9 @@ border-color: black;</string>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>0</x>
       <y>110</y>
-      <width>401</width>
+      <width>451</width>
       <height>291</height>
      </rect>
     </property>
@@ -184,7 +184,7 @@ border-color: black;</string>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>280</x>
       <y>410</y>
       <width>151</width>
       <height>51</height>
@@ -209,12 +209,34 @@ border-color: black;</string>
      <string>Exlcuir Produto</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>410</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>PDF</string>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>label_6</zorder>
    <zorder>tableWidget</zorder>
    <zorder>label_5</zorder>
    <zorder>pushButton_4</zorder>
+   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

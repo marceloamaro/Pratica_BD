@@ -3,6 +3,7 @@ from PyQt5 import  uic,QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import Qt
 import sqlite3
+from reportlab.pdfgen import canvas
     
 def chama_segunda():
     primeira.label_4.setText("")
@@ -29,10 +30,8 @@ def volta_tela():
     quarta.close()
     terceira.close()
     primeira.close()
-    quinta.close()
-    sexta.close()
     sete.close()
-    oito.close()
+    sete.close()
     tela_cadastro.close()
 
 def abre_tela_terceira():
@@ -42,14 +41,7 @@ def abre_tela_terceira():
 def abre_tela_quarta():
     segunda.close()
     quarta.show()    
-       
-def abre_tela_quinta():
-    segunda.close()
-    quinta.show()
-
-def abre_tela_sexta():
-    segunda.close()
-    sexta.show()    
+           
 
 def chama_terceira():
     codigo = terceira.lineEdit.text()
@@ -134,16 +126,40 @@ def cadastrar():
     else:
         tela_cadastro.label.setText("As senhas digitadas estão diferentes")
 
+def gerar_pdf():
+    banco = sqlite3.connect('estoque.db')
+    cursor = banco.cursor()
+    cursor.execute("select * from produtos")
+    dados_lidos = cursor.fetchall()
+    y = 0
+    pdf = canvas.Canvas("cadastro_produtos.pdf")
+    pdf.setFont("Times-Bold", 25)
+    pdf.drawString(250,800, "Produtos cadastrados:")
+    pdf.setFont("Times-Bold", 18)
+
+    pdf.drawString(110,750, "CODIGO")
+    pdf.drawString(210,750, "DESCRIÇÃO")
+    pdf.drawString(350,750, "PREÇO")
+    pdf.drawString(450,750, "CATEGORIA")
+
+    for i in range(0, len(dados_lidos)):
+        y = y + 50
+        
+        pdf.drawString(150,750 - y, str(dados_lidos[i][0]))
+        pdf.drawString(250,750 - y, str(dados_lidos[i][1]))
+        pdf.drawString(350,750 - y, str(dados_lidos[i][2]))
+        pdf.drawString(450,750 - y, str(dados_lidos[i][3]))
+
+    pdf.save()
+    print("PDF FOI GERADO COM SUCESSO!")
+
 
 app=QtWidgets.QApplication([])
 primeira=uic.loadUi("primeira.ui")
 segunda = uic.loadUi("segunda.ui")
 terceira = uic.loadUi("terceira.ui")
 quarta = uic.loadUi("quarta.ui")
-quinta = uic.loadUi("quinta.ui")
-sexta = uic.loadUi("sexta.ui")
 sete = uic.loadUi("sete_quarta.ui")
-oito = uic.loadUi("oito_quinta.ui")
 tela_cadastro = uic.loadUi("tela_cadastro.ui")
 primeira.pushButton.clicked.connect(chama_segunda)
 primeira.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -154,13 +170,11 @@ tela_cadastro.pushButton.clicked.connect(cadastrar)
 quarta.pushButton_6.clicked.connect(volta_tela)
 segunda.pushButton.clicked.connect(abre_tela_quarta)
 terceira.pushButton_2.clicked.connect(volta_tela)
-quinta.pushButton_6.clicked.connect(volta_tela)
-sexta.pushButton_6.clicked.connect(volta_tela)
 quarta.pushButton_7.clicked.connect(busca_completa)
 sete.pushButton_6.clicked.connect(volta_tela)
-oito.pushButton_6.clicked.connect(volta_tela)
 tela_cadastro.pushButton_2.clicked.connect(volta_tela)
 sete.pushButton_4.clicked.connect(apagar)
+sete.pushButton.clicked.connect(gerar_pdf)
 
 
 
