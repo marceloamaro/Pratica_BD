@@ -14,7 +14,6 @@ def chama_segunda():
     try:
         cursor.execute("select senha from cadastro where login ='{}'".format(nome_usuario) )
         senha_bd = cursor.fetchall()
-        print(senha_bd[0][0])
         banco.close() 
     except:
         print("ERRO ao validar o login") 
@@ -43,16 +42,10 @@ def abre_tela_terceira():
 def abre_tela_quarta():
     segunda.close()
     quarta.show()    
-       
-def abre_tela_quinta():
-    segunda.close()
-    quinta.show()
-
-def abre_tela_sexta():
-    segunda.close()
-    sexta.show()    
-
+          
 def chama_terceira():
+    segunda.close()
+    terceira.show()
     codigo = terceira.lineEdit.text()
     descricao = terceira.lineEdit_2.text()
     preco = terceira.lineEdit_3.text()
@@ -77,34 +70,17 @@ def chama_terceira():
     banco.close()
 
 def apagar():
-    busca2 = quinta.lineEdit_2.text()
-    banco = sqlite3.connect('estoque.db') 
+
+    banco = sqlite3.connect('estoque.db')  
+    linha = sete.tableWidget.currentRow()
+    sete.tableWidget.removeRow(linha)
+
     cursor = banco.cursor()
-    
-    resultado = cursor.fetchone()
-    cursor.execute("delete from produtos where descricao = ?", (busca2,))
-    print("Registros Deletados: ")
-    
+    cursor.execute("SELECT codigo FROM produtos")
+    dados_lidos = cursor.fetchall()
+    valor_id = dados_lidos[linha][0]
+    cursor.execute("DELETE FROM produtos WHERE codigo="+ str(valor_id))
     banco.commit()
-    quinta.lineEdit_2.setText("")
-    banco.close()
-
-def busca_simples():
-    oito.show()
-    quinta.close()
-    busca1 = quinta.lineEdit_2.text()
-    banco = sqlite3.connect('estoque.db') 
-    cursor = banco.cursor()
-    cursor.execute("select * from produtos where descricao = ?", (busca1,))
-    resultado = cursor.fetchone()
-    oito.tableWidget.setRowCount(len(resultado))
-    oito.tableWidget.setColumnCount(4)
-
-    for i in range(0, len(resultado)):
-        for j in range(0, 4):
-            oito.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(resultado[i][j])))
-    
-    quinta.lineEdit_2.setText("")
     banco.close()
 
 def busca_completa(): 
@@ -173,15 +149,14 @@ quarta.pushButton_6.clicked.connect(volta_tela)
 segunda.pushButton.clicked.connect(abre_tela_quarta)
 terceira.pushButton_2.clicked.connect(volta_tela)
 quinta.pushButton_6.clicked.connect(volta_tela)
-segunda.pushButton_2.clicked.connect(abre_tela_quinta)
+""" segunda.pushButton_2.clicked.connect(abre_tela_quinta) """
 sexta.pushButton_6.clicked.connect(volta_tela)
-segunda.pushButton_4.clicked.connect(abre_tela_sexta)
-quinta.pushButton_7.clicked.connect(busca_simples)
-sexta.pushButton_8.clicked.connect(apagar)
+""" segunda.pushButton_4.clicked.connect(abre_tela_sexta) """
 quarta.pushButton_7.clicked.connect(busca_completa)
 sete.pushButton_6.clicked.connect(volta_tela)
 oito.pushButton_6.clicked.connect(volta_tela)
 tela_cadastro.pushButton_2.clicked.connect(volta_tela)
+sete.pushButton_4.clicked.connect(apagar)
 
 
 
