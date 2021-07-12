@@ -29,6 +29,7 @@ def editar_dados():
     numero_id = valor_id
 
     banco.close()
+    
 def salvar_valor_editado():
     global numero_id
     banco = sqlite3.connect('estoque.db') 
