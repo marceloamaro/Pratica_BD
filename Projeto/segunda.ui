@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>450</y>
+      <y>440</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -64,9 +64,9 @@ border-color: black;</string>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>130</x>
       <y>320</y>
-      <width>121</width>
+      <width>191</width>
       <height>51</height>
      </rect>
     </property>
@@ -86,7 +86,7 @@ border-radius: 15px;
 border-color: black;</string>
     </property>
     <property name="text">
-     <string>Cadastrar</string>
+     <string>Cadastrar de Produto</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -116,9 +116,9 @@ border-color: black;</string>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>380</y>
-      <width>161</width>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
@@ -138,7 +138,7 @@ border-radius: 15px;
 border-color: black;</string>
     </property>
     <property name="text">
-     <string>Cadastra Usuario</string>
+     <string>Cadastra de Usuario</string>
     </property>
    </widget>
    <zorder>label_2</zorder>

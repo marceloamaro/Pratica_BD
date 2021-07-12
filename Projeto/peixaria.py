@@ -42,10 +42,16 @@ def abre_tela_terceira():
 def abre_tela_quarta():
     segunda.close()
     quarta.show()    
-          
-def chama_terceira():
+       
+def abre_tela_quinta():
     segunda.close()
-    terceira.show()
+    quinta.show()
+
+def abre_tela_sexta():
+    segunda.close()
+    sexta.show()    
+
+def chama_terceira():
     codigo = terceira.lineEdit.text()
     descricao = terceira.lineEdit_2.text()
     preco = terceira.lineEdit_3.text()
@@ -149,9 +155,7 @@ quarta.pushButton_6.clicked.connect(volta_tela)
 segunda.pushButton.clicked.connect(abre_tela_quarta)
 terceira.pushButton_2.clicked.connect(volta_tela)
 quinta.pushButton_6.clicked.connect(volta_tela)
-""" segunda.pushButton_2.clicked.connect(abre_tela_quinta) """
 sexta.pushButton_6.clicked.connect(volta_tela)
-""" segunda.pushButton_4.clicked.connect(abre_tela_sexta) """
 quarta.pushButton_7.clicked.connect(busca_completa)
 sete.pushButton_6.clicked.connect(volta_tela)
 oito.pushButton_6.clicked.connect(volta_tela)

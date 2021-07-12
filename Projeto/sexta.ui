@@ -69,9 +69,9 @@ border-color: black;</string>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>110</y>
-      <width>401</width>
+      <width>411</width>
       <height>291</height>
      </rect>
     </property>
