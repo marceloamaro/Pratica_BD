@@ -53,7 +53,7 @@ def chama_segunda():
     primeira.label_4.setText("")
     nome_usuario = primeira.lineEdit.text()
     senha = primeira.lineEdit_2.text()
-    banco = sqlite3.connect('bdpeixaria.db') 
+    banco = sqlite3.connect('banco_cadastro.db') 
     cursor = banco.cursor()
     
     try:
@@ -160,7 +160,7 @@ def cadastrar():
 
     if (senha == c_senha):
         try:
-            banco = sqlite3.connect('bdpeixaria.db') 
+            banco = sqlite3.connect('banco_cadastro.db') 
             cursor = banco.cursor()
             cursor.execute("CREATE TABLE IF NOT EXISTS cadastro (codigo integer primary key,nome text,login text,senha text)")
             cursor.execute("INSERT INTO cadastro VALUES ('"+codigo+"','"+nome+"','"+login+"','"+senha+"')")
@@ -182,23 +182,23 @@ def cadastrar():
 def busca_usuario(): 
     quinta.show()
     sexta.close() 
-    banco = sqlite3.connect('bdpeixaria.db') 
+    banco = sqlite3.connect('banco_cadastro.db') 
     cursor = banco.cursor()
     cursor.execute("select * from cadastro")
     dados = cursor.fetchall()
     quinta.tableWidget.setRowCount(len(dados))
-    quinta.tableWidget.setColumnCount(3)
+    quinta.tableWidget.setColumnCount(4)
 
     for i in range(0, len(dados)):
-        for j in range(0, 3):
+        for j in range(0, 4):
             quinta.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(dados[i][j])))
     banco.close()
 
 def apagar_usuario():
 
-    banco = sqlite3.connect('bdpeixaria.db')  
-    linha = sete.tableWidget.currentRow()
-    sete.tableWidget.removeRow(linha)
+    banco = sqlite3.connect('banco_cadastro.db')  
+    linha = quinta.tableWidget.currentRow()
+    quinta.tableWidget.removeRow(linha)
 
     cursor = banco.cursor()
     cursor.execute("SELECT codigo FROM cadastro")
@@ -210,8 +210,8 @@ def apagar_usuario():
 
 def editar_dados_usuario():
     global numero_id
-    banco = sqlite3.connect('bdpeixaria.db') 
-    linha = sete.tableWidget.currentRow()
+    banco = sqlite3.connect('banco_cadastro.db') 
+    linha = quinta.tableWidget.currentRow()
     
     cursor = banco.cursor()
     cursor.execute("SELECT codigo FROM cadastro")
@@ -219,32 +219,33 @@ def editar_dados_usuario():
     valor_id = dados_lidos[linha][0]
     cursor.execute("SELECT * FROM cadastro WHERE codigo="+ str(valor_id))
     produto = cursor.fetchall()
-    editar_dados_usuario.show()
+    editar_usuario.show()
 
     
-    editar_dados_usuario.lineEdit_5.setText(str(produto[0][0]))
-    editar_dados_usuario.lineEdit_2.setText(str(produto[0][1]))
-    editar_dados_usuario.lineEdit_3.setText(str(produto[0][2]))
-    editar_dados_usuario.lineEdit_4.setText(str(produto[0][3]))
+    editar_dados_usuario.lineEdit_2.setText(str(produto[0][0]))
+    editar_dados_usuario.lineEdit_3.setText(str(produto[0][1]))
+    editar_dados_usuario.lineEdit_4.setText(str(produto[0][2]))
+    editar_dados_usuario.lineEdit_5.setText(str(produto[0][3]))
     numero_id = valor_id
 
     banco.close()
     
 def salvar_valor_usuario():
     global numero_id
-    banco = sqlite3.connect('bdpeixaria.db') 
+    banco = sqlite3.connect('banco_cadastro.db') 
     # ler dados do lineEdit
+    
     codigo = editar_dados_usuario.lineEdit_5.text()
     nome = editar_dados_usuario.lineEdit_2.text()
     login = editar_dados_usuario.lineEdit_3.text()
     senha = editar_dados_usuario.lineEdit_4.text()
+    
     # atualizar os dados no banco
     cursor = banco.cursor()
     cursor.execute("UPDATE cadastro SET nome = '{}', login = '{}', senha = '{}' WHERE codigo = {}".format(nome,login,senha,codigo))
     banco.commit()
     #atualizar as janelas
-    editar_dados_usuario.close()
-    sete.close()
+    editar_usuario.close()
     busca_usuario()    
 
 def gerar_pdf():
@@ -281,7 +282,7 @@ segunda = uic.loadUi("segunda.ui")
 terceira = uic.loadUi("terceira.ui")
 quarta = uic.loadUi("quarta.ui")
 sete = uic.loadUi("sete_quarta.ui")
-quinta = uic.loadUi("quinta_seg.ui")
+quinta =uic.loadUi("nove.ui")
 sexta = uic.loadUi("sete.ui")
 editar_usuario = uic.loadUi("menu_editar_usuario.ui")
 tela_cadastro = uic.loadUi("tela_cadastro.ui")
@@ -308,6 +309,7 @@ sexta.pushButton_7.clicked.connect(busca_usuario)
 quinta.pushButton_6.clicked.connect(volta_tela)
 quinta.pushButton_4.clicked.connect(apagar_usuario)
 quinta.pushButton_3.clicked.connect(editar_dados_usuario)
+editar_usuario.pushButton.clicked.connect(salvar_valor_usuario)
 
 
 primeira.show()

@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import Qt
 import sqlite3
 from reportlab.pdfgen import canvas
-conexao = sqlite3.connect("bdpeixaria.db")  
+conexao = sqlite3.connect("banco_cadastro.db")  
 
 cursor = conexao.cursor()
 
@@ -17,7 +17,7 @@ def cadastrar():
 
     if (senha == c_senha):
         try:
-            banco = sqlite3.connect('bdpeixaria.db') 
+            banco = sqlite3.connect('banco_cadastro.db') 
             cursor = banco.cursor()
             cursor.execute("CREATE TABLE IF NOT EXISTS cadastro (codigo integer primary key,nome text,login text,senha text)")
             cursor.execute("INSERT INTO cadastro VALUES ('"+codigo+"','"+nome+"','"+login+"','"+senha+"')")
