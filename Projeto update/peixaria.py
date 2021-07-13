@@ -222,10 +222,10 @@ def editar_dados_usuario():
     editar_usuario.show()
 
     
-    editar_dados_usuario.lineEdit_2.setText(str(produto[0][0]))
-    editar_dados_usuario.lineEdit_3.setText(str(produto[0][1]))
-    editar_dados_usuario.lineEdit_4.setText(str(produto[0][2]))
-    editar_dados_usuario.lineEdit_5.setText(str(produto[0][3]))
+    editar_usuario.lineEdit_5.setText(str(produto[0][0]))
+    editar_usuario.lineEdit_2.setText(str(produto[0][1]))
+    editar_usuario.lineEdit_3.setText(str(produto[0][2]))
+    editar_usuario.lineEdit_4.setText(str(produto[0][3]))
     numero_id = valor_id
 
     banco.close()
@@ -234,11 +234,11 @@ def salvar_valor_usuario():
     global numero_id
     banco = sqlite3.connect('banco_cadastro.db') 
     # ler dados do lineEdit
-    
-    codigo = editar_dados_usuario.lineEdit_5.text()
-    nome = editar_dados_usuario.lineEdit_2.text()
-    login = editar_dados_usuario.lineEdit_3.text()
-    senha = editar_dados_usuario.lineEdit_4.text()
+
+    codigo = editar_usuario.lineEdit_5.text()
+    nome = editar_usuario.lineEdit_2.text()
+    login = editar_usuario.lineEdit_3.text()
+    senha = editar_usuario.lineEdit_4.text()
     
     # atualizar os dados no banco
     cursor = banco.cursor()
