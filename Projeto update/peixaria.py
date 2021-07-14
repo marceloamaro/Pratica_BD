@@ -104,6 +104,7 @@ def chama_terceira():
     print("Preco",preco)
     print("Categoria selecionada",categoria)
     print("Estoque selecionada",qestoque)
+    terceira.label_8.setText("Produto cadrastrado")
     
     banco = sqlite3.connect('bdpeixaria.db') 
     cursor = banco.cursor()
