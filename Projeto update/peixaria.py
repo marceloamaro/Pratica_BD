@@ -60,8 +60,8 @@ def chama_segunda():
         cursor.execute("select senha from cadastro where login ='{}'".format(nome_usuario) )
         senha_bd = cursor.fetchall()
         banco.close() 
-    except:
-        primeira.label_4.setText("ERRO ao validar o login") 
+    except sqlite3.Error as erro:
+            print("ERRO ao validar o login: ",erro) 
  
     if senha == senha_bd[0][0]:
         primeira.close()
