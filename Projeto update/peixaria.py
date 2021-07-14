@@ -3,21 +3,21 @@ from PyQt5 import  uic,QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import Qt
 import sqlite3
-from reportlab.pdfgen import canvas
+from reportlab.pdfgen import canvas # importa para gerar pdf
 
-numero_id = 0
+numero_id = 0 #declaração de variavel global
 
 
 def editar_dados():
     global numero_id
     banco = sqlite3.connect('bdpeixaria.db') 
-    linha = sete.tableWidget.currentRow()
+    linha = sete.tableWidget.currentRow() #Obtém a linha que contém a célula atual
     
     cursor = banco.cursor()
-    cursor.execute("SELECT codigo FROM produtos")
-    dados_lidos = cursor.fetchall()
+    cursor.execute("SELECT codigo FROM produtos") # comando para fazer a busca na tabela
+    dados_lidos = cursor.fetchall() # fetchone retorna uma tupla com os resultados da consulta
     valor_id = dados_lidos[linha][0]
-    cursor.execute("SELECT * FROM produtos WHERE codigo="+ str(valor_id))
+    cursor.execute("SELECT * FROM produtos WHERE codigo="+ str(valor_id)) # comando para fazer a busca na tabela
     produto = cursor.fetchall()
     tela_editar.show()
 
@@ -56,12 +56,12 @@ def chama_segunda():
     banco = sqlite3.connect('banco_cadastro.db') 
     cursor = banco.cursor()
     
-    try:
+    try: #try/except serve para tratamento de exceções.
         cursor.execute("select senha from cadastro where login ='{}'".format(nome_usuario) )
         senha_bd = cursor.fetchall()
         banco.close() 
     except:
-        print("ERRO ao validar o login") 
+        primeira.label_4.setText("ERRO ao validar o login") 
  
     if senha == senha_bd[0][0]:
         primeira.close()
@@ -255,8 +255,8 @@ def gerar_pdf():
     dados_lidos = cursor.fetchall()
     y = 0
     pdf = canvas.Canvas("cadastro_produtos.pdf")
-    pdf.setFont("Times-Bold", 25)
-    pdf.drawString(250,800, "Produtos cadastrados:")
+    pdf.setFont("Times-Bold", 25) #fonte
+    pdf.drawString(250,800, "Produtos cadastrados:") #posiçao da fonte
     pdf.setFont("Times-Bold", 18)
 
     pdf.drawString(110,750, "CODIGO")
@@ -273,7 +273,7 @@ def gerar_pdf():
         pdf.drawString(450,750 - y, str(dados_lidos[i][3]))
 
     pdf.save()
-    print("PDF FOI GERADO COM SUCESSO!")
+    sete.label_4.setText("PDF FOI GERADO COM SUCESSO!")
 
 
 app=QtWidgets.QApplication([])
