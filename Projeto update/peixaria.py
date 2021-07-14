@@ -32,7 +32,7 @@ def editar_dados():
     banco.close()
     
 def salvar_valor_editado():
-    global numero_id
+    global numero_id # chamando  variavel global
     banco = sqlite3.connect('bdpeixaria.db') 
     # ler dados do lineEdit
     codigo = tela_editar.lineEdit_2.text()
@@ -60,18 +60,18 @@ def chama_segunda():
         cursor.execute("select senha from cadastro where login ='{}'".format(nome_usuario) )
         senha_bd = cursor.fetchall()
         banco.close() 
-    except sqlite3.Error as erro:
+    except sqlite3.Error as erro: # função para chama erro
             print("ERRO ao validar o login: ",erro) 
  
-    if senha == senha_bd[0][0]:
+    if senha == senha_bd[0][0]: # comparando a senha digitada com senha do banco na prosição
         primeira.close()
         segunda.show()
     else :
         primeira.label_4.setText("Dados de login incorretos!")
     
 def volta_tela():
-    segunda.show()
-    quarta.close()
+    segunda.show() #show() abrir tela
+    quarta.close() #close() fecha tela
     terceira.close()
     primeira.close()
     quinta.close()
@@ -122,8 +122,8 @@ def chama_terceira():
 def apagar():
 
     banco = sqlite3.connect('bdpeixaria.db')  
-    linha = sete.tableWidget.currentRow()
-    sete.tableWidget.removeRow(linha)
+    linha = sete.tableWidget.currentRow() #selecionar a linha
+    sete.tableWidget.removeRow(linha) # para renover a linha
 
     cursor = banco.cursor()
     cursor.execute("SELECT codigo FROM produtos")
@@ -140,10 +140,10 @@ def busca_completa():
     cursor = banco.cursor()
     cursor.execute("select * from produtos")
     resultados = cursor.fetchall()
-    sete.tableWidget.setRowCount(len(resultados))
-    sete.tableWidget.setColumnCount(5)
+    sete.tableWidget.setRowCount(len(resultados)) #ler linhas
+    sete.tableWidget.setColumnCount(5) # ler colinas
 
-    for i in range(0, len(resultados)):
+    for i in range(0, len(resultados)):# for para preenche as tabelas
         for j in range(0, 5):
             sete.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(resultados[i][j])))
     banco.close()   
