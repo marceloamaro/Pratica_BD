@@ -56,6 +56,7 @@ def chama_segunda():
     banco = sqlite3.connect('banco_cadastro.db') 
     cursor = banco.cursor()
     
+    
     try: #try/except serve para tratamento de exceções.
         cursor.execute("select senha from cadastro where login ='{}'".format(nome_usuario) )
         senha_bd = cursor.fetchall()
